@@ -6,8 +6,6 @@ foreach($Group in $LocalGroups){
   Write-Output -InputObject "------ Working on $($Group.Name)"
   $Name = $Group.Name
   [ADSI]$Query = "WinNT://Localhost/$Name,group"
-        
-    Write-Verbose "[Process]  Getting group member details" 
     
     $Members = $Query.invoke("Members")
     foreach($Member in $members){
